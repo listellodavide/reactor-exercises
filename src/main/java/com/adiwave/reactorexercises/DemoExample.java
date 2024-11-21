@@ -23,7 +23,7 @@ public class DemoExample {
         subscriber.getSubscription().request(3);
         Thread.sleep(Duration.ofSeconds(3));
 
-        // somethingIsWrong();
+        somethingIsWrong();
 
         subscriber.getSubscription().request(3);
         Thread.sleep(Duration.ofSeconds(3));

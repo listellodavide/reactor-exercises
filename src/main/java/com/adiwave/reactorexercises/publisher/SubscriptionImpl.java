@@ -28,7 +28,7 @@ public class SubscriptionImpl implements Subscription {
         log.info("requested {} items.. processing..", requested);
         if(requested > MAX_ITEMS) {
             this.isCanceled = true;
-            throw new IllegalArgumentException("requested " + requested + " items exceeds " + MAX_ITEMS);
+            this.subscriber.onError(new RuntimeException("requested " + requested + " items exceeds " + MAX_ITEMS));
         }
         for(int i = 0; i < requested && count < MAX_ITEMS; i++) {
             count++;
