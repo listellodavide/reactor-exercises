@@ -29,6 +29,7 @@ public class SubscriptionImpl implements Subscription {
         if(requested > MAX_ITEMS) {
             this.isCanceled = true;
             this.subscriber.onError(new RuntimeException("requested " + requested + " items exceeds " + MAX_ITEMS));
+            return;
         }
         for(int i = 0; i < requested && count < MAX_ITEMS; i++) {
             count++;
