@@ -11,8 +11,20 @@ public class NonBlockingIO {
 
     public static void main(String[] args) {
         ExternalServiceClient externalServiceClient = new ExternalServiceClient();
-        externalServiceClient.getProductName(15)
-                .subscribe(Util.subscriber(""));
+
+        for(int i = 1; i <= 15; i++) {
+            externalServiceClient.getProductName(i)
+                    .subscribe(Util.subscriber(""));
+
+        }
+
+        FileServiceImpl fileService = new FileServiceImpl();
+        fileService.write("new-file.txt", "Hello World !! \r\n My Friend Dexter !")
+                .subscribe(Util.subscriber("write"));
+        fileService.read("new-file.txt")
+                .subscribe(Util.subscriber("read"));
+        fileService.delete("new-file.txt")
+                .subscribe(Util.subscriber("delete"));
 
         Util.sleepSeconds(2);
     }
