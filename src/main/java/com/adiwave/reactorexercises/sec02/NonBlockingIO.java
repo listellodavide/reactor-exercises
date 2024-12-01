@@ -4,6 +4,7 @@ import com.adiwave.reactorexercises.client.ExternalServiceClient;
 import com.adiwave.reactorexercises.common.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Flux;
 
 public class NonBlockingIO {
 
@@ -25,6 +26,10 @@ public class NonBlockingIO {
                 .subscribe(Util.subscriber("read"));
         fileService.delete("new-file.txt")
                 .subscribe(Util.subscriber("delete"));
+
+
+        Flux.just(1, 2, 3, 4, 5, "READY ! GO !")
+                        .subscribe(Util.subscriber("flux"));
 
         Util.sleepSeconds(2);
     }
