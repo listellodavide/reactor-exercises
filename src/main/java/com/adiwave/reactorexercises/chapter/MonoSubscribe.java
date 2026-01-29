@@ -1,4 +1,4 @@
-package com.adiwave.reactorexercises.sec02;
+package com.adiwave.reactorexercises.chapter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

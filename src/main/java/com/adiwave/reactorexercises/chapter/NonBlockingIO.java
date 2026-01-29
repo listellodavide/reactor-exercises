@@ -1,6 +1,5 @@
-package com.adiwave.reactorexercises.sec02;
+package com.adiwave.reactorexercises.chapter;
 
-import com.adiwave.reactorexercises.client.ExternalServiceClient;
 import com.adiwave.reactorexercises.common.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
