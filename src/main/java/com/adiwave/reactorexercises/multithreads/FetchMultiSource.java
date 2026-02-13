@@ -12,7 +12,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 public class FetchMultiSource {
-    WebClient client = WebClient.create("https://jsonplaceholder.typicode.com/");
+    WebClient client = WebClient.create("https://jsonplaceholder.typicode.com/"); //async non-blocking rest client
 
     public Mono<PersonNote> fetchUserDetails(Integer id) {
         return client.get()
