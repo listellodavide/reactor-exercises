@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executors;
 
-public class CombineFutures {
+public class BlockingCombineFutures {
 
     public void combineVirtualThreads() {
         // example using blocking Virtual Threads good for Http, I/O, Jdbc long running calls
@@ -71,7 +71,7 @@ public class CombineFutures {
     }
 
     public static void main(String[] args) {
-        CombineFutures cb = new CombineFutures();
+        BlockingCombineFutures cb = new BlockingCombineFutures();
         cb.combineVirtualThreads();
     }
 

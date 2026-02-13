@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
-public class FetchMultiSource {
+public class NonBlockingFetchMultiSource {
     WebClient client = WebClient.create("https://jsonplaceholder.typicode.com/"); //async non-blocking rest client
 
     public Mono<PersonNote> fetchUserDetails(Integer id) {
@@ -50,8 +50,8 @@ public class FetchMultiSource {
     }
 
     public static void main(String[] args) {
-        FetchMultiSource fetchMultiSource = new FetchMultiSource();
-        fetchMultiSource.combineRequests().join();
+        NonBlockingFetchMultiSource nonBlockingFetchMultiSource = new NonBlockingFetchMultiSource();
+        nonBlockingFetchMultiSource.combineRequests().join();
 
     }
 }
